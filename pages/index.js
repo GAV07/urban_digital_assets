@@ -11,8 +11,8 @@ import Head from 'next/head'
 import { CMS_NAME } from '../lib/constants'
 
 export default function Index({ preview, allPosts }) {
-  const heroPost = allPosts[0].node
-  const morePosts = allPosts.slice(1)
+  // const heroPost = allPosts[0].node
+  // const morePosts = allPosts.slice(1)
   return (
     <>
       <Layout preview={preview}>
@@ -41,9 +41,9 @@ export default function Index({ preview, allPosts }) {
   )
 }
 
-export async function getStaticProps({ preview = false, previewData }) {
-  const allPosts = await getAllPostsForHome(previewData)
-  return {
-    props: { preview, allPosts },
-  }
-}
+// export async function getStaticProps({ preview = false, previewData }) {
+//   const allPosts = await getAllPostsForHome(previewData)
+//   return {
+//     props: { preview, allPosts },
+//   }
+// }
