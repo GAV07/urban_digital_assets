@@ -6,7 +6,7 @@ import Testimonals from '../components/testimonals'
 import Features from '../components/features'
 import CTA from '../components/cta'
 import Layout from '../components/layout'
-import { getAllPostsForHome } from '../lib/api'
+//import { getAllPostsForHome } from '../lib/api'
 import Head from 'next/head'
 import { CMS_NAME } from '../lib/constants'
 
@@ -22,7 +22,7 @@ export default function Index({ preview, allPosts }) {
         <Hero />
         <Features />
         <Container>
-          {heroPost && (
+          {/* {heroPost && (
             <HeroPost
               title={heroPost.title}
               coverImage={heroPost.coverimage}
@@ -32,7 +32,7 @@ export default function Index({ preview, allPosts }) {
               excerpt={heroPost.excerpt}
             />
           )}
-          {morePosts.length > 0 && <MoreStories posts={morePosts} />}
+          {morePosts.length > 0 && <MoreStories posts={morePosts} />} */}
         </Container>
         <Testimonals />
         <CTA />

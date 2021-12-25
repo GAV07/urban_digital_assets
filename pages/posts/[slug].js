@@ -22,7 +22,7 @@ export default function Post({ post, morePosts, preview }) {
     <Layout preview={preview}>
       <Container>
         <Header />
-        {router.isFallback ? (
+        {/* {router.isFallback ? (
           <PostTitle>Loading…</PostTitle>
         ) : (
           <>
@@ -46,28 +46,28 @@ export default function Post({ post, morePosts, preview }) {
               <MoreStories posts={morePosts} />
             )}
           </>
-        )}
+        )} */}
       </Container>
     </Layout>
   )
 }
 
-export async function getStaticProps({ params, preview = false, previewData }) {
-  const data = await getPostAndMorePosts(params.slug, previewData)
+// export async function getStaticProps({ params, preview = false, previewData }) {
+//   const data = await getPostAndMorePosts(params.slug, previewData)
 
-  return {
-    props: {
-      preview,
-      post: data?.post ?? null,
-      morePosts: data?.morePosts ?? [],
-    },
-  }
-}
+//   return {
+//     props: {
+//       preview,
+//       post: data?.post ?? null,
+//       morePosts: data?.morePosts ?? [],
+//     },
+//   }
+// }
 
-export async function getStaticPaths() {
-  const allPosts = await getAllPostsWithSlug()
-  return {
-    paths: allPosts?.map(({ node }) => `/posts/${node._meta.uid}`) || [],
-    fallback: true,
-  }
-}
+// export async function getStaticPaths() {
+//   const allPosts = await getAllPostsWithSlug()
+//   return {
+//     paths: allPosts?.map(({ node }) => `/posts/${node._meta.uid}`) || [],
+//     fallback: true,
+//   }
+// }
