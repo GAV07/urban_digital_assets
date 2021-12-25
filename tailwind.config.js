@@ -4,7 +4,15 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      fontFamily: {
+        Archivo: ["Archivo Black", "san-serif"],
+        Hind: ["Hind", "san-serif"]
+      },
       colors: {
+        'primary-1': '#2253D8',
+        black : '#070600',
+        white : '#F7F7FF',
+
         'accent-1': '#FAFAFA',
         'accent-2': '#EAEAEA',
         'accent-7': '#333',

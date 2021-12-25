@@ -1,7 +1,10 @@
 import Container from '../components/container'
 import MoreStories from '../components/more-stories'
 import HeroPost from '../components/hero-post'
-import Intro from '../components/intro'
+import Hero from '../components/hero'
+import Testimonals from '../components/testimonals'
+import Features from '../components/features'
+import CTA from '../components/cta'
 import Layout from '../components/layout'
 import { getAllPostsForHome } from '../lib/api'
 import Head from 'next/head'
@@ -14,10 +17,11 @@ export default function Index({ preview, allPosts }) {
     <>
       <Layout preview={preview}>
         <Head>
-          <title>Next.js Blog Example with {CMS_NAME}</title>
+          <title>Urban Digital Assets</title>
         </Head>
+        <Hero />
+        <Features />
         <Container>
-          <Intro />
           {heroPost && (
             <HeroPost
               title={heroPost.title}
@@ -30,6 +34,8 @@ export default function Index({ preview, allPosts }) {
           )}
           {morePosts.length > 0 && <MoreStories posts={morePosts} />}
         </Container>
+        <Testimonals />
+        <CTA />
       </Layout>
     </>
   )
