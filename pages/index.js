@@ -1,49 +1,41 @@
+//import MoreStories from '../components/more-stories'
+//import HeroPost from '../components/hero-post'
+//import { getAllPostsForHome } from '../lib/api'
+//import { CMS_NAME } from '../lib/constants'
 import Container from '../components/container'
-import MoreStories from '../components/more-stories'
-import HeroPost from '../components/hero-post'
 import Hero from '../components/hero'
 import Testimonals from '../components/testimonals'
-import Features from '../components/features'
+import Features from '../components/services'
 import CTA from '../components/cta'
 import Layout from '../components/layout'
-//import { getAllPostsForHome } from '../lib/api'
 import Head from 'next/head'
-import { CMS_NAME } from '../lib/constants'
+import { Client } from '../utils/prismicHelpers'
 
-export default function Index({ preview, allPosts }) {
-  // const heroPost = allPosts[0].node
-  // const morePosts = allPosts.slice(1)
+export default function Index({ preview, home }) {
   return (
     <>
       <Layout preview={preview}>
         <Head>
-          <title>Urban Digital Assets</title>
+            <title>Urban Digital Assets</title>
         </Head>
-        <Hero />
-        <Features />
+        <Hero copy={home} />
+        <Features copy={home} />
         <Container>
-          {/* {heroPost && (
-            <HeroPost
-              title={heroPost.title}
-              coverImage={heroPost.coverimage}
-              date={heroPost.date}
-              author={heroPost.author}
-              slug={heroPost._meta.uid}
-              excerpt={heroPost.excerpt}
-            />
-          )}
-          {morePosts.length > 0 && <MoreStories posts={morePosts} />} */}
+          {/* Media Content */}
         </Container>
-        <Testimonals />
-        <CTA />
+        <Testimonals copy={home} />
+        <CTA copy={home}/>
       </Layout>
     </>
   )
 }
 
-// export async function getStaticProps({ preview = false, previewData }) {
-//   const allPosts = await getAllPostsForHome(previewData)
-//   return {
-//     props: { preview, allPosts },
-//   }
-// }
+export async function getStaticProps() {
+  const home = await Client().getSingle('home_page')
+  
+  return {
+    props: {
+      home
+    },
+  }
+}
