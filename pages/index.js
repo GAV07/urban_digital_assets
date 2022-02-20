@@ -5,7 +5,7 @@
 import Container from '../components/container'
 import Hero from '../components/hero'
 import Testimonals from '../components/testimonals'
-import Features from '../components/services'
+import Services from '../components/services'
 import CTA from '../components/cta'
 import Layout from '../components/layout'
 import Head from 'next/head'
@@ -19,7 +19,7 @@ export default function Index({ preview, home }) {
             <title>Urban Digital Assets</title>
         </Head>
         <Hero copy={home} />
-        <Features copy={home} />
+        <Services copy={home} />
         <Container>
           {/* Media Content */}
         </Container>

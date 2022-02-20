@@ -28,7 +28,7 @@ const features = [
   }
 
 export default function Services({ preview, service }) {
-    console.log(service.data)
+    //console.log(service.data)
   return (
     <>
       <Layout preview={preview}>

@@ -1,5 +1,6 @@
 /* This example requires Tailwind CSS v2.0+ */
-export default function Testimonals() {
+
+export default function Testimonals({ copy }) {
     return (
       <section className="bg-white overflow-hidden">
         <div className="relative max-w-7xl mx-auto pt-20 pb-12 px-4 sm:px-6 lg:px-8 lg:py-20">
@@ -53,7 +54,7 @@ export default function Testimonals() {
             <div className="hidden lg:block lg:flex-shrink-0">
               <img
                 className="h-64 w-64 rounded-full xl:h-80 xl:w-80"
-                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                src={copy.data.customer_image.url}
                 alt=""
               />
             </div>
@@ -74,8 +75,7 @@ export default function Testimonals() {
               <blockquote className="relative">
                 <div className="text-2xl leading-9 font-medium text-gray-900">
                   <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo expedita voluptas culpa sapiente alias
-                    molestiae. Numquam corrupti in laborum sed rerum et corporis.
+                    {copy.data.quote}
                   </p>
                 </div>
                 <footer className="mt-8">
@@ -88,8 +88,8 @@ export default function Testimonals() {
                       />
                     </div>
                     <div className="ml-4 lg:ml-0">
-                      <div className="text-base font-medium text-gray-900">Judith Black</div>
-                      <div className="text-base font-medium text-indigo-600">CEO, Tuple</div>
+                      <div className="text-base font-medium text-gray-900">{copy.data.customer_name}</div>
+                      <div className="text-base font-medium text-indigo-600">{copy.data.customer_description}</div>
                     </div>
                   </div>
                 </footer>
