@@ -1,6 +1,7 @@
 /* This example requires Tailwind CSS v2.0+ */
 import { ClipboardCopyIcon } from '@heroicons/react/outline'
 import { ExternalLinkIcon } from '@heroicons/react/solid'
+import Link from 'next/link'
 
 export default function CTA({ copy }) {
   //console.log(copy.data)
@@ -22,13 +23,15 @@ export default function CTA({ copy }) {
           </p>
           <div className="mt-8">
             <div className="inline-flex rounded-md shadow">
-              <a
-                href="#"
-                className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-gray-900 bg-white hover:bg-gray-50"
-              >
-                Visit the help center
-                <ExternalLinkIcon className="-mr-1 ml-3 h-5 w-5 text-gray-400" aria-hidden="true" />
-              </a>
+              <Link href="https://www.facebook.com/groups/3321176637915418">
+                <a
+                  target="_blank"
+                  className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-gray-900 bg-white hover:bg-gray-50"
+                >
+                  Join our Group
+                  {/* <ExternalLinkIcon className="-mr-1 ml-3 h-5 w-5 text-gray-400" aria-hidden="true" /> */}
+                </a>
+              </Link>
             </div>
           </div>
         </div>

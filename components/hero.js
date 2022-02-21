@@ -30,24 +30,32 @@ export default function Hero({ copy }) {
     
     coins.current.forEach((coin, index) => {
       gsap.set(coin, {
-        x: 250 * Math.cos(angle),
-        y: 250 * Math.sin(angle),
-        opacity: 0
+        // x: 250 * Math.cos(angle),
+        // y: 250 * Math.sin(angle),
+        x: 400,
+        y: gsap.utils.random(-300, 150),
+        
       })
       if( circle.current != undefined) {
-        gsap.to(coin, {duration: .5, opacity: 1})
+        // gsap.to(coin, {
+        //   duration: 10,
+        //   repeat: -1,
+        //   ease: "sine.inOut",
+        //   delay: index * 0.7,   
+        //   motionPath: {
+        //     path: circle.current,
+        //     align: circle.current,
+        //     alignOrigin: [0.5, 0.5],
+        //     start: 0.5,
+        //     end: 1.5
+        //   },
+        // })
         gsap.to(coin, {
-          duration: 10,
-          repeat: -1,
-          ease: "sine.inOut",
-          delay: index * 0.7,   
-          motionPath: {
-            path: circle.current,
-            align: circle.current,
-            alignOrigin: [0.5, 0.5],
-            start: 0.5,
-            end: 1.5
-          },
+          x: () => gsap.utils.random(-300, -50),
+          duration: 5,
+          delay: index * 1.5,
+          yoyo: true,
+          repeat: -1
         })
       }
       
