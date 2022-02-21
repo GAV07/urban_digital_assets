@@ -67,9 +67,9 @@ export default function Hero({ copy }) {
   return (
     <div className="relative bg-white overflow-hidden">
       <main className="lg:relative">
-        <div className="mx-auto max-w-7xl w-full pt-16 pb-20 text-center lg:py-20 lg:text-left">
+        <div className="mx-auto max-w-7xl w-full pt-10 pb-20 text-center lg:py-20 lg:text-left">
           <div className="px-2 lg:w-1/2 sm:px-8 xl:pr-16">
-            <h1 className="text-7xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-7xl lg:text-7xl xl:text-7xl">
+            <h1 className="text-6xl leading-tight tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-7xl lg:text-7xl xl:text-7xl">
               {copy.data.hero_title}
             </h1>
             <p className="mt-3 max-w-md mx-auto text-lg text-gray-500 sm:text-xl md:mt-5 md:max-w-3xl">
@@ -96,8 +96,8 @@ export default function Hero({ copy }) {
             </div>
           </div>
         </div>
-        <div className="relative w-full h-64 sm:h-72 md:h-96 lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2 lg:h-full">
-          <div className="flex align-items justify-center min-w-full min-h-full">
+        <div className="relative w-full h-0 rotate-90 sm:h-72 md:h-96 md:rotate-0 lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2 lg:h-full">
+          <div className="flex align-items justify-center z-0 min-w-full min-h-full">
             <div className="">
               <svg width="886" height="886" fill="none" xmlns="http://www.w3.org/2000/svg">  
                 <path 
@@ -111,20 +111,7 @@ export default function Hero({ copy }) {
                 />
               </svg>
             </div>
-            {/* <div className=" sm:hidden">
-              <svg width="886" height="886" fill="none" xmlns="http://www.w3.org/2000/svg">  
-                <path 
-                  ref={el => circle.current = el}
-                  d="
-                  M 400, 200
-                  m -75, 0
-                  a 75,75 0 1,0 442,0
-                  a 75,75 0 1,0 -442,0
-                  "
-                />
-              </svg>
-            </div> */}
-            <div className="min-w-max">
+            <div className="min-w-max hidden sm:block">
               {icons.map((icon, index) => (
                 <div key={index} ref={el => coins.current[index] = el} className="icons absolute top-1/2 left-1/2 p-7 mx-4 min-w-max bg-white drop-shadow-md rounded-full flex">
                   <Image 

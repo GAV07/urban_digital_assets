@@ -37,7 +37,7 @@ export default function Services({ copy }) {
         </div>
 
         <div className="mt-10">
-          <dl className="flex">
+          <dl className="flex flex-wrap space-y-6">
             {services.map((service) => (
               <div key={service.service_name} className="relative min-w-[30%]">
                 <dt>
